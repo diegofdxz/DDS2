@@ -56,6 +56,7 @@
     <div class="card-header">Add Comment</div>
     <div class="card-body">
         <form method="post">
+            <input type="hidden" name="csrf_token" value="{{ csrf_token() }}">
             <div class="mb-3">
                 <textarea class="form-control" name="comment" rows="3" placeholder="Write your comment..." required></textarea>
             </div>

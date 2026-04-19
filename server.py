@@ -1,9 +1,15 @@
 from datetime import timedelta
-
+import os
 from flask import Flask, render_template
+from flask_wtf import CSRFProtect
+
+
 
 app = Flask(__name__)
-app.secret_key = 'supersecretkey'
+app.secret_key = os.environ.get('FLASK_SECRET', 'development_secret_key')
+
+csrf = CSRFProtect()
+csrf.init_app(app)
 
 app.config.update(
     SESSION_COOKIE_HTTPONLY=True,
