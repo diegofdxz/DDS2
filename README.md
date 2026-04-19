@@ -17,13 +17,6 @@ The database is automatically initialized on first run.
 
 ---
 
-## Default Users
-
-| Username | Password   | Role   | Notes                      |
-|----------|------------|--------|----------------------------|
-| `alice`  | password1  | user   | Standard employee          |
-| `bob`    | password2  | owner  | Owns "Insegura Corp"       |
-| `admin`  | admin123   | admin  | Full access                |
 
 ---
 
