@@ -6,7 +6,11 @@ from server import app
 def login():
     if 'username' in session:
         return redirect('/dashboard')
+    
     next_url = request.args.get('next', '/dashboard')
+    if urlparse(next_url).netloc or not next_url.startswith('/'):
+        next_url = '/dashboard'
+        
     if request.method == 'POST':
         username = request.form['username']
         password = request.form['password']
